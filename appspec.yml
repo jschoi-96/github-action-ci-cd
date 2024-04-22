@@ -4,7 +4,7 @@ os: linux
 
 files:
   - source:  /
-    destination: /home/ubuntu/app
+    destination: /home/ubuntu/github-action-ci-cd
     overwrite: yes
 
 permissions:
@@ -14,11 +14,7 @@ permissions:
     group: ubuntu
 
 hooks:
-  AfterInstall:
-    - location: scripts/stop.sh
-      timeout: 60
-      runas: ubuntu
   ApplicationStart:
-    - location: scripts/start.sh
-      timeout: 60
+    - location: scripts/gh_deploy.sh
+      timeout: 180
       runas: ubuntu

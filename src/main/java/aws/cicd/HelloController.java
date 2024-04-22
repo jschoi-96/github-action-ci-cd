@@ -11,8 +11,6 @@ public class HelloController {
         return "Main Page";
     }
 
-    ㄴㄴ
-
     @GetMapping("/hello")
     public String hello() {
         return "helloddd";
